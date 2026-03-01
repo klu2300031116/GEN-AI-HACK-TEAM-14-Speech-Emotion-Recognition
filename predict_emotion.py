@@ -18,7 +18,7 @@ le = joblib.load("label_encoder.pkl")
 # Feature Extraction
 # =========================
 
-def extract_features(file_path):
+def extract_features(file_path = r"C:\Users\hrish\Downloads\Audio_Song_Actors_01-24\Actor_04"):
     audio, sr = librosa.load(file_path, duration=3, offset=0.5)
     mfcc = librosa.feature.mfcc(y=audio, sr=sr, n_mfcc=40)
     return np.mean(mfcc.T, axis=0)
